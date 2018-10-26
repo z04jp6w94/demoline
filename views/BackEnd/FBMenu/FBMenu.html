@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+    <head>
+        <!--
+        [1. Meta Tags]
+        -->
+        <meta charset="utf-8" />
+        <title>LINE CRM</title>
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+        <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon"/>
+        <!--
+        [2. Css References]
+        -->
+        <link rel="stylesheet" href="/assets/css/bootstrap.min.css" type="text/css" id="link-bootstrap" />
+        <link rel="stylesheet" href="/assets/css/animate.min.css" type="text/css" />
+        <link rel="stylesheet" href="/assets/css/app.min.css" type="text/css" id="link-app" />
+        <link rel="stylesheet" href="/assets/css/demo.min.css" type="text/css" />
+        <link rel="stylesheet" href="/assets/css/font-awesome.min.css" type="text/css" />
+        <link rel="stylesheet" href="/assets/css/pe-icon-7-stroke.css" type="text/css" />
+				<link rel="stylesheet" href="/assets/css/shadowboxByBackOffice.css" type="text/css" />
+        <style>
+					div.panel-body ul{
+						margin: 0px;
+						list-style-type: none;
+					}
+					div.panel-body ul li{
+						padding-left: 50px;
+						position: relative;
+					}
+					div.panel-body ul li ul li{
+						border-width: 1px;
+						border-style: solid;
+						border-color: #36C7C9;
+						padding-left: 0px;
+						height: 50px;
+						background-color: #FFF;
+						-webkit-border-radius: 3px;
+						-moz-border-radius: 3px;
+						border-radius: 3px;
+					}
+					div.panel-body ul li ul li.btn:hover{
+						background-color: #36C7C9;
+						color: #FFF;
+					}
+					div.panel-body ul li ul li.btn{
+						cursor: pointer;
+						color: #36C7C9;
+						text-align: center;
+						font-size: 18px;
+						line-height: 50px;
+						margin: 4px 0 4px 0;
+					}
+					div.panel-body ul li ul li.menu{
+						color: #000;
+						text-align: right;
+						font-size: 14px;
+						line-height: 50px;
+						margin: 9px 0 9px 0;
+					}
+					div.panel-body ul li:hover i{
+						visibility: visible;
+						cursor: pointer;
+					}
+					div.panel-body ul li i{
+						position: absolute;
+						top: 9px;
+						font-size: 22px;
+						line-height: 28px;
+						height: 32px;
+						width: 32px;
+						-webkit-border-radius: 3px;
+						-moz-border-radius: 3px;
+						border-radius: 3px;
+						font-weight: 500;
+						visibility: hidden;
+						text-align: center;
+					}
+					div.panel-body ul li i.pe-7s-trash{
+						background-color: #FF008A;
+						left: 45px;
+						color: #FFF;
+					}
+					div.panel-body ul li i.pe-7s-trash:hover{
+						background-color: #DA0076;
+					}
+					div.panel-body ul li i.pe-7s-note{
+						background-color: #E5E5E5;
+						left: 0px;
+						color: #4A4A4A;
+					}
+					div.panel-body ul li i.pe-7s-note:hover{
+						background-color: #C7C7C7;
+					}
+					.width400{
+						width: 400px;
+						overflow:hidden;
+						text-overflow:ellipsis;
+						white-space:nowrap;
+						padding: 0 5px 0 5px;
+					}
+					.width360{
+						width: 360px;
+						overflow:hidden;
+						text-overflow:ellipsis;
+						white-space:nowrap;
+						padding: 0 5px 0 5px;
+					}
+					.width320{
+						width: 320px;
+						overflow:hidden;
+						text-overflow:ellipsis;
+						white-space:nowrap;
+						padding: 0 5px 0 5px;
+					}
+        </style>
+    </head>
+    <body>
+        <div class="animsition">
+            <!--
+            [3. Sidebar Menu]
+            -->
+            <div class="sidebar menu">
+                <div class="sidebar-header">
+    <div class="header-brand">
+        <div class="brand-logo">
+            <img src="https://social-crm-2.chiliman.com.tw/assets/img/logo.png" alt="CR Web" />
+        </div>
+        <div class="brand-slogan">
+            <div class="slogan-title">SocialCRM</div>
+        </div>
+    </div>
+</div>                <div class="sidebar-menu">
+                    <ul class="menu">
+                        <li ><a><i class="pe-7s-config"></i><span>系統維護</span></a><ul><li class="submenu-title"><span>系統維護</span></li><li ><a href=/views/BackEnd/Sys/Sysgroup.php><i class="pe-7s-science"></i><span>系统群组維護</span></a></li><li ><a href=/views/BackEnd/Sys/Sysprogram.php><i class="pe-7s-tools"></i><span>系统程式維護</span></a></li><li ><a href=/views/BackEnd/Sys/Sysuser.php><i class="pe-7s-user"></i><span>系统使用者維護</span></a></li><li ><a href=/views/BackEnd/Sys/Sysmenu.php><i class="pe-7s-keypad"></i><span>系统選單維護</span></a></li></ul></li><li ><a><i class="pe-7s-id"></i><span>客戶管理</span></a><ul><li class="submenu-title"><span>客戶管理</span></li><li ><a href=/views/BackEnd/Crm/Crm.php><i class="pe-7s-smile"></i><span>客戶管理</span></a></li><li ><a href=/views/BackEnd/CrmRecord/CrmRecord.php><i class="pe-7s-gift"></i><span>購買方案</span></a></li></ul></li><li ><a><i class="pe-7s-box2"></i><span>方案管理</span></a><ul><li class="submenu-title"><span>方案管理</span></li><li ><a href=/views/BackEnd/Product/Product.php><i class="pe-7s-box2"></i><span>模組方案管理</span></a></li></ul></li><li ><a><i class="pe-7s-edit"></i><span>系統維護</span></a><ul><li class="submenu-title"><span>系統維護</span></li><li ><a href=/views/BackEnd/ClientSys/Sysgroup.php><i class="pe-7s-science"></i><span>客戶用系统群组維護</span></a></li><li ><a href=/views/BackEnd/ClientSys/Sysuser.php><i class="pe-7s-user"></i><span>客戶用系统使用者維護</span></a></li><li ><a href=/views/BackEnd/ClientSys/Sysmenu.php><i class="pe-7s-keypad"></i><span>客戶用系统選單維護</span></a></li></ul></li><li ><a><i class="pe-7s-note"></i><span>標籤管理</span></a><ul><li class="submenu-title"><span>標籤管理</span></li><li ><a href=/views/BackEnd/Code/Tag.php><i class="pe-7s-ticket"></i><span>標籤維護</span></a></li><li ><a href=/views/BackEnd/Code/Push.php><i class="pe-7s-more"></i><span>推文分類維護</span></a></li></ul></li><li ><a><i class="pe-7s-rocket"></i><span>活動管理</span></a><ul><li class="submenu-title"><span>活動管理</span></li><li ><a href=/views/BackEnd/Push/Push.php><i class="pe-7s-loop"></i><span>LINE推文管理</span></a></li><li ><a href=/views/BackEnd/TargetPush/TargetPush.php><i class="pe-7s-target"></i><span>LINE目標推文</span></a></li><li ><a href=/views/BackEnd/Activity/Activity.php><i class="pe-7s-help2"></i><span>活動管理</span></a></li><li ><a href=/views/BackEnd/Share/Share.php><i class="fa fa-angellist"></i><span>分享換好康</span></a></li></ul></li><li ><a><i class="pe-7s-users"></i><span>名單管理</span></a><ul><li class="submenu-title"><span>名單管理</span></li><li ><a href=/views/BackEnd/Member/Member.php><i class="pe-7s-user"></i><span>顧客名單</span></a></li><li ><a href=/views/BackEnd/FeedBack/FeedBack.php><i class="pe-7s-chat"></i><span>顧客提問</span></a></li></ul></li><li ><a><i class="fa fa-sitemap"></i><span>LINE選單</span></a><ul><li class="submenu-title"><span>LINE選單</span></li><li ><a href=/views/BackEnd/LineSetting/LineSetting.php><i class="pe-7s-smile"></i><span>LINE基本設定</span></a></li><li ><a href=/views/BackEnd/LineMenuContent/LineMenuContent.php><i class="fa fa-th-large"></i><span>關鍵字管理</span></a></li><li ><a href=/views/BackEnd/LineMenu/LineMenu.php><i class="fa fa-table"></i><span>選單管理</span></a></li></ul></li><li class="active open"><a><i class="fa fa-sitemap"></i><span>FB 功能管理</span></a><ul><li class="submenu-title"><span>FB 功能管理</span></li><li class="active open"><a href=/views/BackEnd/FBMenu/FBMenu.php><i class="fa fa-table"></i><span>Facebook選單管理</span></a></li><li ><a href=/views/BackEnd/FBPostArticle/FBPostArticle.php><i class="fa fa-newspaper-o"></i><span>Facebook粉絲團PO文</span></a></li><li ><a href=/views/BackEnd/FBPush/FBPush.php><i class="pe-7s-share"></i><span>FB Messenger推播管理</span></a></li><li ><a href=/views/BackEnd/FBTargetPush/FBTargetPush.php><i class="pe-7s-paper-plane"></i><span>FB Messenger目標推播</span></a></li></ul></li><li ><a><i class="fa fa-line-chart"></i><span>報表</span></a><ul><li class="submenu-title"><span>報表</span></li><li ><a href=/views/BackEnd/Chart/TagChart.php><i class="fa fa-bar-chart"></i><span>標籤報表</span></a></li><li ><a href=/views/BackEnd/Chart/PushChart.php><i class="fa fa-bar-chart"></i><span>推文報表</span></a></li></ul></li><li ><a><i class="fa fa-shopping-cart"></i><span>商品管理</span></a><ul><li class="submenu-title"><span>商品管理</span></li><li ><a href=/views/BackEnd/Code/Commodity.php><i class="pe-7s-ticket"></i><span>商品分類</span></a></li><li ><a href=/views/BackEnd/Commodity/Commodity.php><i class="pe-7s-gift"></i><span>商品管理</span></a></li><li ><a href=/views/BackEnd/CommodityPush/CommodityPush.php><i class="pe-7s-paper-plane"></i><span>商品推播</span></a></li></ul></li>                    </ul>
+                </div>
+                <div class="sidebar-footer">
+    <div class="footer-avatar">
+        <img src="https://social-crm-2.chiliman.com.tw/assets/img/avatars/member.png" alt="登入者姓名" />
+    </div>
+    <div class="footer-user">
+        <a href="/views/BackEnd/UserInfo.php">齊力樂門員工</a>
+    </div>
+    <div class="footer-links">
+        <a href="/views/BackEnd/Login/Member_Logout_Action.php" class="links-logout">
+            <i class="pe-7s-power"></i>
+            <span>登出</span>
+        </a>
+    </div>
+</div>            </div>
+            <!--
+            [4. Sidebar Form]
+            -->
+            <div class="sidebar form collapsed">
+            </div>
+            <!--
+            [5. Main Page Content]
+            -->
+            <div class="main-content">
+                <!--
+                [5.1. Page Header]
+                -->
+                <div class="content-header">
+                    <!--
+                    [5.1.1. BreadCrumb]
+                    -->
+                    <ul class="breadcrumb">
+                        <li><a href="#"><i class="pe-7s-home"></i><span>Home</span></a></li><li><a href = "#"><i class = "fa fa-sitemap"></i><span>FB 功能管理</span></a></li><li><a href = "#"><i class = "fa fa-table"></i><span>Facebook選單管理</span></a></li>
+                    </ul>
+                    <!--
+                    [5.1.2. Header Buttons]
+                    -->
+                    <ul class="header-actions">
+                        <li class="actions-stretch-menu" id="action-stretch-menu">
+                            <div class="icon"></div>
+                        </li>
+                        <li id="action-menu-collapse">
+                            <a>
+                                <i class="pe-7s-menu"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!--
+                [5.2. Page Navbar]
+                -->
+                <div class="content-nav">
+                    <div class="navbar navbar-default content-nav-navbar">
+                        <div class="navbar-header">
+                            <a data-toggle="collapse" data-target="#navbar-collapse-2" class="navbar-toggle collapsed">
+                                <div class="icon"></div>
+                            </a>
+                            <a href="#" class="navbar-brand">Facebook選單管理</a>
+                        </div>
+                    </div>
+                </div>
+                <!--
+                [5.3. Page Body]
+                -->
+                <div class="content-body">
+                    <div class="row">
+                        <div class="col-lg-12 col-sm-6 col-xs-12">
+                            <form name="createForm" id="createForm" method="post" action="FBMenu.php" autocomplete="off" enctype="multipart/form-data">
+                                <input type="hidden" id="fileName" name="fileName" value="FBMenu" />
+                                <div class="panel panel-white">
+                                    <div class="panel-heading">
+                                        <a id="add-row-btn" href="FBMenu.php" class="btn btn-default">取消</a>
+                                        <div class="panel-tools">
+                                            <a class="tools-action" href="#" data-toggle="collapse">
+                                                <i class="pe-7s-angle-up"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div>
+                                            <label for="definput">Menu標題</label>
+                                            <input type="text" id="rs_title" name="rs_title" maxlength="10" class="form-control tooltip-warning" data-toggle="tooltip" data-placement="top" data-original-title="" placeholder="Menu標題" required >
+                                            <hr class="full-width" />
+                                            <h5>Menu按鈕設定</h5>
+																							<ul>
+																								<!--
+																								<li>
+																									<ul>
+																										<li class="menu width400">很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字</li>
+																									</ul>
+																									<i class="pe-7s-note"></i>
+																									<i class="pe-7s-trash"></i>
+																								</li>
+																								<li>
+																									<ul>
+																										<li class="menu width360">很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字</li>
+																									</ul>
+																									<i class="pe-7s-note"></i>
+																									<i class="pe-7s-trash"></i>
+																								</li>
+																								<li>
+																									<ul>
+																										<li class="menu width320">很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字</li>
+																									</ul>
+																									<i class="pe-7s-note"></i>
+																									<i class="pe-7s-trash"></i>
+																								</li>
+																								<li>
+																									<ul>
+																										<li class="btn width320">+ 新增選單項目</li>
+																									</ul>
+																								</li>
+																								<li>
+																									<ul>
+																										<li class="btn width360">+ 新增選單項目</li>
+																									</ul>
+																								</li>
+																							-->
+																								<li>
+																									<ul>
+																										<li class="btn width400" data-level="1">+ 新增選單項目</li>
+																									</ul>
+																								</li>
+																							</ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--
+            [6. JavaScript References]
+            -->
+            <script src="https://social-crm-2.chiliman.com.tw/assets/js/jquery.min.js"></script>
+            <script src="https://social-crm-2.chiliman.com.tw/assets/js/bootstrap.min.js"></script>
+            <script src="https://social-crm-2.chiliman.com.tw/assets/js/modernizr.custom.js"></script>
+            <script src="https://social-crm-2.chiliman.com.tw/assets/js/lib/slimscroll/jquery.slimscroll.min.js"></script>
+            <script src="https://social-crm-2.chiliman.com.tw/assets/js/lib/animsition/animsition.min.js"></script>
+            <script src="https://social-crm-2.chiliman.com.tw/assets/js/main.js"></script>
+            <script type="text/javascript" src="https://social-crm-2.chiliman.com.tw/assets_rear/javascripts/ComFun.js"></script>
+						<script type="text/javascript" src="https://social-crm-2.chiliman.com.tw/assets_rear/javascripts/jcomFunc.js"></script>
+						<script type="text/javascript" src="https://social-crm-2.chiliman.com.tw/assets_rear/javascripts/jquery.ChiliUpload.js"></script>
+						<script type="text/javascript" src="https://social-crm-2.chiliman.com.tw/assets_rear/javascripts/init-ChiliUpload.js"></script>
+						<script type="text/javascript" src="https://social-crm-2.chiliman.com.tw/assets_rear/javascripts/BackEndJSForWork.js"></script>
+						<script type="text/javascript" src="https://social-crm-2.chiliman.com.tw/assets_rear/javascripts/shadowboxByBackOffice.js"></script>
+<!-- Bootstrap -->
+						<script type="text/javascript" src="https://social-crm-2.chiliman.com.tw/assets_rear/javascripts/BootstrapJSForWork.js"></script>
+            <script src="/assets_front/javascripts/FBMenu/FBMenu.js"></script>
+            <!--
+            [7. Page Related Scripts]
+            -->
+            <script src="https://social-crm-2.chiliman.com.tw/assets/js/lib/select2/select2.full.min.js"></script>
+            <script src="https://social-crm-2.chiliman.com.tw/assets/js/lib/tagsinput/bootstrap-tagsinput.min.js"></script>
+            <script src="https://social-crm-2.chiliman.com.tw/assets/js/lib/datepicker/bootstrap-datepicker.min.js"></script>
+            <script src="https://social-crm-2.chiliman.com.tw/assets/js/lib/timepicker/bootstrap-timepicker.min.js"></script>
+            <script src="https://social-crm-2.chiliman.com.tw/assets/js/lib/moment/moment.min.js"></script>
+            <script src="https://social-crm-2.chiliman.com.tw/assets/js/lib/daterangepicker/daterangepicker.min.js"></script>
+            <script src="https://social-crm-2.chiliman.com.tw/assets/js/lib/autosize/jquery.autosize.min.js"></script>
+            <script src="https://social-crm-2.chiliman.com.tw/assets/js/lib/spinbox/spinbox.min.js"></script>
+            <script src="https://social-crm-2.chiliman.com.tw/assets/js/lib/knob/jquery.knob.min.js"></script>
+            <script src="https://social-crm-2.chiliman.com.tw/assets/js/lib/colorpicker/jquery.minicolors.min.js"></script>
+            <script src="https://social-crm-2.chiliman.com.tw/assets/js/lib/slider/ion.rangeSlider.min.js"></script>
+            <script src="https://social-crm-2.chiliman.com.tw/assets/js/lib/dropzone/dropzone.min.js"></script>
+            <script src="https://social-crm-2.chiliman.com.tw/assets/js/lib/rating/jquery.rateit.min.js"></script>
+            <script src="https://social-crm-2.chiliman.com.tw/assets/js/lib/mockjax/jquery.mockjax.min.js"></script>
+            <script src="https://social-crm-2.chiliman.com.tw/assets/js/lib/xeditable/bootstrap-editable.min.js"></script>
+            <script src="https://social-crm-2.chiliman.com.tw/assets/js/pages/formadvancedinputs.js"></script>
+						<script language="JavaScript">
+						//document ready
+							$(document).ready(function(){
+							// - Set Shadowbox
+								Shadowbox.init({
+									players:    ["img", "iframe", "html"]
+								});
+							// - click
+								//$('div.panel-body ul li ul li.btn').click(function(){
+								//$('div.panel-body ul li ul li.btn').bind('click', function(event) {
+								//$("li.btn").live("click", function(){
+								$(document).on('click', 'li.btn', function () {
+									var btnlevel = $(this).attr('data-level');
+									Shadowbox.open({
+										player	: 'iframe',
+										content	: 'FBMenuPopupInput.php?btnlevel=' + btnlevel,
+										width	: 540,
+										height	: 420
+									});
+
+								});
+							});
+							var template1;
+							var template2;
+							var template3;
+							var temphtml;
+							template1 = '<li><ul><li class="menu width400">@TEXT</li></ul><i class="pe-7s-note"></i><i class="pe-7s-trash"></i></li><li><ul><li class="btn width360" data-level="2">+ 新增選單項目</li></ul></li>';
+							template2 = '<li><ul><li class="menu width360">@TEXT</li></ul><i class="pe-7s-note"></i><i class="pe-7s-trash"></i></li><li><ul><li class="btn width320" data-level="3">+ 新增選單項目</li></ul></li>';
+							template3 = '<li><ul><li class="menu width320">@TEXT</li></ul><i class="pe-7s-note"></i><i class="pe-7s-trash"></i></li>';
+							function UpdateMenu(strlevel, strtitle){
+								temphtml = '';
+								switch(strlevel){
+									case '1':
+										temphtml = template1.replace('@TEXT', strtitle);
+										UpdateHtml(temphtml);
+										break;
+									case '2':
+										temphtml = template2.replace('@TEXT', strtitle);
+										UpdateHtml(temphtml);
+										break;
+									case '3':
+										temphtml = template3.replace('@TEXT', strtitle);
+										UpdateHtml(temphtml);
+										break;
+								}
+							}
+							function UpdateHtml(strhtml){
+								$('div.panel-body > div > ul').prepend(strhtml);
+							}
+						</script>
+        </div>
+    </body>
+</html>
