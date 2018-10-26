@@ -101,7 +101,7 @@ if (session_id()) {
 /*
  * Process events
  */
-$dataBase = new DatabaseProcessorForChiliman;
+$dataBase = new DatabaseProcessorForWork;
 $databaseProcessor = new DatabaseProcessor($dataBase);
 
 $s3 = new s3(CDN_REGION, CDN_VERSION, CDN_PATH, CDN_PROFILE, CDN_BUCKET);
