@@ -39,11 +39,11 @@ $sql .= " where c_id = ? ";
 $c_line_name = $mysqli->readValuePreSTMT($sql, "s", array($c_id));
 /* Data */
 $sql = " SELECT lpv_id, lpv_name, lpv_img_cdn_root, lpv_video_cdn_root, lpv_send_status, ";
-$sql .= " lpv_send_date ";
+$sql .= " lpv_send_date, lpv_img, lpv_video ";
 $sql .= " FROM line_push_video ";
 $sql .= " WHERE lpv_id = ? ";
 $sql .= " AND c_id = ? ";
-$initAry = $mysqli->readArrayPreSTMT($sql, "ss", array($dataKey, $c_id), 6);
+$initAry = $mysqli->readArrayPreSTMT($sql, "ss", array($dataKey, $c_id), 8);
 $datetime = $initAry[0][5];
 $sendDate = date('Y-m-d', strtotime($datetime));
 $sendTime = date('h:i A', strtotime($datetime));
@@ -161,7 +161,7 @@ $sendTime = date('h:i A', strtotime($datetime));
                                                 <label class="btn btn-danger btn-xs" id="uploadFileChooseButton"><input type="file" name="lpv_img" id="lpv_img" style="display:none;" disabled></input>選擇檔案</label>
                                                 <div id="uploadFilePreviewBlock">
                                                     <label id="uploadFileDelete" for="definput"></label>
-                                                    <label id="uploadFilePreview" for="definput"><?php if ($initAry[0][2] != "") echo "<img src='" . CDN_ROOT_PATH . $initAry[0][2] . "' style='width:300px;'><img>"; ?></label>
+                                                    <label id="uploadFilePreview" for="definput"><?php if ($initAry[0][6] != "") echo "<img src='" . WEB_HOSTNAME . $initAry[0][6] . "' style='width:300px;'><img>"; ?></label>
                                                     <label id="uploadFileMsg" for="definput"></label>
                                                 </div>
                                                 <hr class="full-width" />
@@ -173,7 +173,7 @@ $sendTime = date('h:i A', strtotime($datetime));
                                                     <label id="uploadVideoDelete" for="definput"></label>
                                                     <label id="uploadVideoPreview" for="definput">
                                                         <video width="400" controls>
-                                                            <?php if ($initAry[0][3] != "") echo "<source src='" . CDN_ROOT_PATH . $initAry[0][3] . "' type='video/mp4'>"; ?>
+                                                            <?php if ($initAry[0][7] != "") echo "<source src='" . WEB_HOSTNAME . $initAry[0][7] . "' type='video/mp4'>"; ?>
                                                         </video>    
                                                     </label>
                                                     <label id="uploadVideoMsg" for="definput"></label>

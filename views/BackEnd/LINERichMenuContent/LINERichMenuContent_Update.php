@@ -110,10 +110,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $originalImgName = $pictureFile->archiveWithoutReSizePictureFile();
                 $thumbnailImgName = $pictureFile->archiveWithReSizePictureFile();
                 /* 上傳檔案到CDN */
-                $UploadDir = ROOT_PATH . '/' . $originalImgName;
-                $CDN_FILE_NAME = substr($originalImgName, -37);
-                $lrcm_cdn_root = CDN_LINE_MENU_CONTENT_M . $c_id . '/' . $CDN_FILE_NAME;
-                $s3->putObject($UploadDir, $lrcm_cdn_root);
+//                $UploadDir = ROOT_PATH . '/' . $originalImgName;
+//                $CDN_FILE_NAME = substr($originalImgName, -37);
+//                $lrcm_cdn_root = CDN_LINE_MENU_CONTENT_M . $c_id . '/' . $CDN_FILE_NAME;
+//                $s3->putObject($UploadDir, $lrcm_cdn_root);
                 //檔案路徑
                 $lrcm_img = $originalImgName;
             }
@@ -249,10 +249,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     $originalImgName = $pictureFile->archiveWithoutReSizePictureFile();
                     $thumbnailImgName = $pictureFile->archiveWithReSizePictureFile();
                     /* 上傳檔案到CDN */
-                    $UploadDir = ROOT_PATH . '/' . $originalImgName;
-                    $CDN_FILE_NAME = substr($originalImgName, -40);
-                    $lrct_cdn_root = CDN_LINE_MENU_CONTENT_T . $c_id . '/' . $CDN_FILE_NAME;
-                    $s3->putObject($UploadDir, $lrct_cdn_root);
+//                    $UploadDir = ROOT_PATH . '/' . $originalImgName;
+//                    $CDN_FILE_NAME = substr($originalImgName, -40);
+//                    $lrct_cdn_root = CDN_LINE_MENU_CONTENT_T . $c_id . '/' . $CDN_FILE_NAME;
+//                    $s3->putObject($UploadDir, $lrct_cdn_root);
                     //檔案路徑
                     $lrct_img = $originalImgName;
                 }
@@ -359,10 +359,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     $originalImgName = $pictureFile->archiveWithoutReSizePictureFile();
                     $thumbnailImgName = $pictureFile->archiveWithReSizePictureFile();
                     /* 上傳檔案到CDN */
-                    $UploadDir = ROOT_PATH . '/' . $originalImgName;
-                    $CDN_FILE_NAME = substr($originalImgName, -40);
-                    $lrct_cdn_root = CDN_LINE_MENU_CONTENT_T . $c_id . '/' . $CDN_FILE_NAME;
-                    $s3->putObject($UploadDir, $lrct_cdn_root);
+//                    $UploadDir = ROOT_PATH . '/' . $originalImgName;
+//                    $CDN_FILE_NAME = substr($originalImgName, -40);
+//                    $lrct_cdn_root = CDN_LINE_MENU_CONTENT_T . $c_id . '/' . $CDN_FILE_NAME;
+//                    $s3->putObject($UploadDir, $lrct_cdn_root);
                     //檔案路徑
                     $lrct_img = $originalImgName;
                 }

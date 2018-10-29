@@ -20,12 +20,12 @@ $fileName = $_REQUEST["fileName"];
 $program_id = $_REQUEST["program_id"];
 $program_name = $_REQUEST["program_name"];
 $dataKey = $_REQUEST["dataKey"];
-/* Catch 19 */
+/* Catch 17 */
 $fileName = DECCode($fileName);
 $program_id = DECCode($program_id);
 $program_name = DECCode($program_name);
 $dataKey = DECCode($dataKey);
-chkSourceFileName('19', $program_id);
+chkSourceFileName('17', $program_id);
 //資料庫連線
 $mysqli = new DatabaseProcessorForWork();
 /* Data */

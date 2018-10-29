@@ -19,28 +19,21 @@ $c_id = !empty($_SESSION["c_id"]) ? $_SESSION["c_id"] : NULL;
 $fileName = $_REQUEST["fileName"];
 $program_id = $_REQUEST["program_id"];
 $program_name = $_REQUEST["program_name"];
-/* Catch 19 */
+/* Catch 17 */
 $fileName = DECCode($fileName);
 $program_id = DECCode($program_id);
 $program_name = DECCode($program_name);
-chkSourceFileName('19', $program_id);
+chkSourceFileName('17', $program_id);
 //資料庫連線
 $mysqli = new DatabaseProcessorForWork();
 /* 關鍵字Data */
-$sql = " SELECT '0', '[提問]' ";
-$sql .= " FROM line_richmenu_content_m ";
-$sql .= " UNION ";
-$sql .= " (SELECT lrcm_id, lrcm_keyword FROM line_richmenu_content_m ";
-$sql .= " WHERE c_id = ? ";
-$sql .= " AND deletestatus = 'N') ";
-$lrcm_Ary = $mysqli->readArrayPreSTMT($sql, "s", array($c_id), 2);
-/* 分享換好康 */
-$sql = " SELECT sa_id, sa_title ";
-$sql .= " FROM share_activity ";
+//$sql = " SELECT '0', '[提問]' ";
+//$sql .= " FROM line_richmenu_content_m ";
+//$sql .= " UNION ";
+$sql = " SELECT lrcm_id, lrcm_keyword FROM line_richmenu_content_m ";
 $sql .= " WHERE c_id = ? ";
 $sql .= " AND deletestatus = 'N' ";
-$sql .= " AND sa_status = 'Y' ";
-$share_Ary = $mysqli->readArrayPreSTMT($sql, "s", array($c_id), 2);
+$lrcm_Ary = $mysqli->readArrayPreSTMT($sql, "s", array($c_id), 2);
 
 ?>
 <!DOCTYPE html>

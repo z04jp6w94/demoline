@@ -19,11 +19,11 @@ $c_id = !empty($_SESSION["c_id"]) ? $_SESSION["c_id"] : NULL;
 $fileName = !empty($_REQUEST["fileName"]) ? $_REQUEST["fileName"] : NULL;
 $program_id = !empty($_REQUEST["program_id"]) ? $_REQUEST["program_id"] : NULL;
 $program_name = !empty($_REQUEST["program_name"]) ? $_REQUEST["program_name"] : NULL;
-/* Catch 20 */
+/* Catch 18 */
 $fileName = DECCode($fileName);
 $program_id = DECCode($program_id);
 $program_name = DECCode($program_name);
-chkSourceFileName('20', $program_id);
+chkSourceFileName('18', $program_id);
 //資料庫連線
 $mysqli = new DatabaseProcessorForWork();
 /* c_line_name */
@@ -153,7 +153,7 @@ $lrcm_ary = $mysqli->readArrayPreSTMT($sql, "s", array($c_id), 2);
                                                 <select id="lrcm_type" name="lrcm_type" class="e1 tooltip-warning" data-toggle="tooltip" data-placement="top" data-original-title="" style="width: 100%;" required>
                                                     <option value="">請選擇</option>
                                                     <option value="1">文字</option>
-                                                    <option value="2">麻將牌</option>
+                                                    <option value="2">輪播</option>
                                                     <option value="3">圖片</option>
                                                 </select>
                                                 <hr class="full-width" />

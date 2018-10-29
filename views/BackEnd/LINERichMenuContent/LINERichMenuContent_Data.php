@@ -28,11 +28,11 @@ $sql .= " CASE m.lrcm_action_type ";
 $sql .= " WHEN '1' THEN (SELECT IFNULL(m.app_id,' ') FROM line_richmenu_content_m d WHERE m.app_id = d.lrcm_id)  ";
 $sql .= " WHEN '4' THEN (SELECT IFNULL(m.app_id,' ') FROM commodity_m d WHERE m.app_id = d.cm_id)  ";
 $sql .= " ELSE '' ";
-$sql .= " END AS 'app_id' ";
+$sql .= " END AS 'app_id', lrcm_img ";
 $sql .= " FROM line_richmenu_content_m m ";
 $sql .= " WHERE lrcm_id = ?";
 $sql .= " AND c_id = ? ";
-$LRCMAry = $mysqli->readArrayPreSTMT($sql, "ss", array($dataKey, $c_id), 7);
+$LRCMAry = $mysqli->readArrayPreSTMT($sql, "ss", array($dataKey, $c_id), 8);
 //SET VALUE
 $ct_id = $LRCMAry[0][0];
 $lrcm_cdn_root = $LRCMAry[0][1];
@@ -41,6 +41,7 @@ $lrcm_content = $LRCMAry[0][3];
 $lrcm_action_type = $LRCMAry[0][4];
 $lrcm_url = $LRCMAry[0][5];
 $app_id = $LRCMAry[0][6];
+$lrcm_img = $LRCMAry[0][7];
 /* Detail */
 $sql = " SELECT lrct_id, ct_id, lrct_cdn_root, lrct_title, lrct_content, ";
 $sql .= " lrct_action_type, lrct_url, ";
@@ -49,13 +50,13 @@ $sql .= " WHEN '1' THEN (SELECT IFNULL(t.app_id,' ') FROM line_richmenu_content_
 $sql .= " WHEN '4' THEN (SELECT IFNULL(t.app_id,' ') FROM commodity_m d WHERE t.app_id = d.cm_id)  ";
 $sql .= " ELSE '' ";
 $sql .= " END AS 'app_id', ";
-$sql .= " lrct_sort ";
+$sql .= " lrct_sort, lrct_img ";
 $sql .= " FROM line_richmenu_content_t t ";
 $sql .= " WHERE lrcm_id = ?";
 $sql .= " AND c_id = ? ";
 $sql .= " AND deletestatus = 'N' ";
 $sql .= " ORDER BY lrct_sort ";
-$LRCTAry = $mysqli->readArrayPreSTMT($sql, "ss", array($dataKey, $c_id), 9);
+$LRCTAry = $mysqli->readArrayPreSTMT($sql, "ss", array($dataKey, $c_id), 10);
 //標籤代碼檔
 $sql = " select ct_id, ct_name from code_tag ";
 $sql .= " where c_id = ? ";
@@ -108,6 +109,7 @@ if ($lrcm_type == 1) {
         $lrct_url = $LRCTAry[$i][6];
         $app_id = $LRCTAry[$i][7];
         $lrct_sort = $LRCTAry[$i][8];
+        $lrct_img = $LRCTAry[$i][9];
         $ct_str = explode(",", $ct_id);
         /* init */
         $str .= '<div id="carousel_' . $number . '" >';
@@ -200,10 +202,10 @@ if ($lrcm_type == 1) {
             $str .= '</div>';
             $str .= '<div id="img_' . $number . '" class="tooltip-warning" data-toggle="tooltip" data-placement="top" data-original-title="">';
             $str .= '<label for="lrcm_img' . $number . '"><b>圖片</b></label>';
-            $str .= '<label class="btn btn-danger btn-xs" id="uploadFileChooseButton' . $number . '"><input type="file" name="lrcm_img[]" id="lrcm_img' . $number . '" value="' . $lrct_cdn_root . '" class="upload" style="display:none;" required></input>選擇檔案</label>';
+            $str .= '<label class="btn btn-danger btn-xs" id="uploadFileChooseButton' . $number . '"><input type="file" name="lrcm_img[]" id="lrcm_img' . $number . '" value="' . $lrct_img . '" class="upload" style="display:none;" required></input>選擇檔案</label>';
             $str .= '<div id="uploadFilePreviewBlock">';
             $str .= '<label id="uploadFileDelete' . $number . '"><span class="btn btn-danger uploadFileDeleteButton" id="uploadFileDeleteButton' . $number . '">刪除</span></label>';
-            $str .= '<label id="uploadFilePreview' . $number . '"><img src="' . CDN_ROOT_PATH . $lrct_cdn_root . '" style="width:300px;"></label>';
+            $str .= '<label id="uploadFilePreview' . $number . '"><img src="' . WEB_HOSTNAME . $lrct_img . '" style="width:300px;"></label>';
             $str .= '<label id="uploadFileMsg' . $number . '"></label>';
             $str .= '</div>';
             $str .= '<hr class="full-width" />';
@@ -241,10 +243,10 @@ if ($lrcm_type == 1) {
             $str .= '</div>';
             $str .= '<div id="img_' . $number . '" class="tooltip-warning" data-toggle="tooltip" data-placement="top" data-original-title="">';
             $str .= '<label for="lrcm_img' . $number . '"><b>圖片</b></label>';
-            $str .= '<label class="btn btn-danger btn-xs" id="uploadFileChooseButton' . $number . '"><input type="file" name="lrcm_img[]" id="lrcm_img' . $number . '" value="' . $lrct_cdn_root . '" class="upload" style="display:none;" required></input>選擇檔案</label>';
+            $str .= '<label class="btn btn-danger btn-xs" id="uploadFileChooseButton' . $number . '"><input type="file" name="lrcm_img[]" id="lrcm_img' . $number . '" value="' . $lrct_img . '" class="upload" style="display:none;" required></input>選擇檔案</label>';
             $str .= '<div id="uploadFilePreviewBlock">';
             $str .= '<label id="uploadFileDelete' . $number . '"><span class="btn btn-danger uploadFileDeleteButton" id="uploadFileDeleteButton1">刪除</span></label>';
-            $str .= '<label id="uploadFilePreview' . $number . '"><img src="' . CDN_ROOT_PATH . $lrct_cdn_root . '" style="width:300px;"></label>';
+            $str .= '<label id="uploadFilePreview' . $number . '"><img src="' . WEB_HOSTNAME . $lrct_img . '" style="width:300px;"></label>';
             $str .= '<label id="uploadFileMsg' . $number . '"></label>';
             $str .= '</div>';
             $str .= '<hr class="full-width" />';
@@ -388,10 +390,10 @@ if ($lrcm_type == 1) {
         $str .= '<div id="img_1" class="tooltip-warning" data-toggle="tooltip" data-placement="top" data-original-title="">';
         $str .= '<hr class="full-width" />';
         $str .= '<label for="lrcm_img1"><b>圖片</b></label>';
-        $str .= '<label class="btn btn-danger btn-xs" id="uploadFileChooseButton1"><input type="file" name="lrcm_img[]" id="lrcm_img1" value="' . $lrcm_cdn_root . '" class="upload" style="display:none;" required></input>選擇檔案</label>';
+        $str .= '<label class="btn btn-danger btn-xs" id="uploadFileChooseButton1"><input type="file" name="lrcm_img[]" id="lrcm_img1" value="' . $lrcm_img . '" class="upload" style="display:none;" required></input>選擇檔案</label>';
         $str .= '<div id="uploadFilePreviewBlock">';
         $str .= '<label id="uploadFileDelete1"><span class="btn btn-danger uploadFileDeleteButton" id="uploadFileDeleteButton1">刪除</span></label>';
-        $str .= '<label id="uploadFilePreview1"><img src="' . CDN_ROOT_PATH . $lrcm_cdn_root . '" style="width:300px;"></label>';
+        $str .= '<label id="uploadFilePreview1"><img src="' . WEB_HOSTNAME . $lrcm_img . '" style="width:300px;"></label>';
         $str .= '<label id="uploadFileMsg1"></label>';
         $str .= '</div>';
         $str .= '</div>';
@@ -421,10 +423,10 @@ if ($lrcm_type == 1) {
         $str .= '<div id="img_1" class="tooltip-warning" data-toggle="tooltip" data-placement="top" data-original-title="">';
         $str .= '<hr class="full-width" />';
         $str .= '<label for="lrcm_img_1"><b>圖片</b></label>';
-        $str .= '<label class="btn btn-danger btn-xs" id="uploadFileChooseButton1"><input type="file" name="lrcm_img[]" id="lrcm_img1" value="' . $lrcm_cdn_root . '" class="upload" style="display:none;" required></input>選擇檔案</label>';
+        $str .= '<label class="btn btn-danger btn-xs" id="uploadFileChooseButton1"><input type="file" name="lrcm_img[]" id="lrcm_img1" value="' . $lrcm_img . '" class="upload" style="display:none;" required></input>選擇檔案</label>';
         $str .= '<div id="uploadFilePreviewBlock">';
         $str .= '<label id="uploadFileDelete1"><span class="btn btn-danger uploadFileDeleteButton" id="uploadFileDeleteButton1">刪除</span></label>';
-        $str .= '<label id="uploadFilePreview1"><img src="' . CDN_ROOT_PATH . $lrcm_cdn_root . '" style="width:300px;"></label>';
+        $str .= '<label id="uploadFilePreview1"><img src="' . WEB_HOSTNAME . $lrcm_img . '" style="width:300px;"></label>';
         $str .= '<label id="uploadFileMsg1"></label>';
         $str .= '</div>';
         $str .= '</div>';
@@ -454,10 +456,10 @@ if ($lrcm_type == 1) {
         $str .= '<div id="img_1" class="tooltip-warning" data-toggle="tooltip" data-placement="top" data-original-title="">';
         $str .= '<hr class="full-width" />';
         $str .= '<label for="lrcm_img_1"><b>圖片</b></label>';
-        $str .= '<label class="btn btn-danger btn-xs" id="uploadFileChooseButton1"><input type="file" name="lrcm_img[]" id="lrcm_img1" value="' . $lrcm_cdn_root . '" class="upload" style="display:none;" required></input>選擇檔案</label>';
+        $str .= '<label class="btn btn-danger btn-xs" id="uploadFileChooseButton1"><input type="file" name="lrcm_img[]" id="lrcm_img1" value="' . $lrcm_img . '" class="upload" style="display:none;" required></input>選擇檔案</label>';
         $str .= '<div id="uploadFilePreviewBlock">';
         $str .= '<label id="uploadFileDelete1"><span class="btn btn-danger uploadFileDeleteButton" id="uploadFileDeleteButton1">刪除</span></label>';
-        $str .= '<label id="uploadFilePreview1"><img src="' . CDN_ROOT_PATH . $lrcm_cdn_root . '" style="width:300px;"></label>';
+        $str .= '<label id="uploadFilePreview1"><img src="' . WEB_HOSTNAME . $lrcm_img . '" style="width:300px;"></label>';
         $str .= '<label id="uploadFileMsg1"></label>';
         $str .= '</div>';
         $str .= '</div>';
@@ -505,7 +507,7 @@ if ($lrcm_type == 1) {
 //    $str .= '<label class="btn btn-danger btn-xs" id="uploadFileChooseButton1"><input type="file" name="lrcm_img[]" id="lrcm_img1" class="upload" style="display:none;" required></input>選擇檔案</label>';
 //    $str .= '<div id="uploadFilePreviewBlock">';
 //    $str .= '<label id="uploadFileDelete1"><span class="btn btn-danger" id="uploadFileDeleteButton1">刪除</span></label>';
-//    $str .= '<label id="uploadFilePreview1"><img src="' . CDN_ROOT_PATH . $lrcm_cdn_root . '" style="width:300px;"></label>';
+//    $str .= '<label id="uploadFilePreview1"><img src="' . WEB_HOSTNAME . $lrcm_img . '" style="width:300px;"></label>';
 //    $str .= '<label id="uploadFileMsg1"></label>';
 //    $str .= '</div>';
 //    $str .= '</div>';

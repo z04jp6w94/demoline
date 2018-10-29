@@ -20,12 +20,12 @@ $fileName = $_REQUEST["fileName"];
 $program_id = $_REQUEST["program_id"];
 $program_name = $_REQUEST["program_name"];
 $dataKey = $_REQUEST["dataKey"];
-/* Catch 20 */
+/* Catch 18 */
 $fileName = DECCode($fileName);
 $program_id = DECCode($program_id);
 $program_name = DECCode($program_name);
 $dataKey = DECCode($dataKey);
-chkSourceFileName('20', $program_id);
+chkSourceFileName('18', $program_id);
 //資料庫連線
 $mysqli = new DatabaseProcessorForWork();
 /* c_line_name */
@@ -176,7 +176,7 @@ $LRCT_COUNT = $mysqli->readValuePreSTMT($sql, "ss", array($dataKey, $c_id));
                                                     if ($LRCMAry[0][1] == "2") {
                                                         echo 'selected';
                                                     }
-                                                    ?>>麻將牌</option>
+                                                    ?>>輪播</option>
                                                     <option value="3" <?php
                                                     if ($LRCMAry[0][1] == "3") {
                                                         echo 'selected';

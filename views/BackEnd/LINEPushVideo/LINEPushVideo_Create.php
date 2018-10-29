@@ -70,23 +70,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $originalImgName = $pictureFile->archiveWithoutReSizePictureFile();
         $thumbnailImgName = $pictureFile->archiveWithReSizePictureFile();
         /* 上傳檔案到CDN */
-        $UploadDir = ROOT_PATH . '/' . $thumbnailImgName;
-        $CDN_FILE_NAME = substr($thumbnailImgName, -38);
-        $UploadImageCDN = CDN_PUSH_VIDEO . $c_id . '/' . $CDN_FILE_NAME;
-        $s3->putObject($UploadDir, $UploadImageCDN);
+//        $UploadDir = ROOT_PATH . '/' . $thumbnailImgName;
+//        $CDN_FILE_NAME = substr($thumbnailImgName, -38);
+//        $UploadImageCDN = CDN_PUSH_VIDEO . $c_id . '/' . $CDN_FILE_NAME;
+//        $s3->putObject($UploadDir, $UploadImageCDN);
         //影片
         $oldfileName = $_FILES['lpv_video']['name'];
         $newfileName = $c_id . "_" . date("YmdHis");
         $tempFilePath = $_FILES['lpv_video']['tmp_name'];
-        $serverFilePath = "assets_rear/images/push_video/" . $c_id;
+        $serverFilePath = "assets_rear/files/push_video/" . $c_id;
         $VideoFile = new BackEndFileForWork($oldfileName, $newfileName, $tempFilePath, $serverFilePath);
-        $VideoFile->createFolder("assets_rear/images/push_video");
+        $VideoFile->createFolder("assets_rear/files/push_video");
         $originalVideoName = $VideoFile->archive();
         /* 上傳檔案到CDN */
-        $UploadDir = ROOT_PATH . '/' . $originalVideoName;
-        $CDN_FILE_NAME = substr($originalVideoName, -29);
-        $UploadVideoCDN = CDN_PUSH_VIDEO . $c_id . '/' . $CDN_FILE_NAME;
-        $s3->putObject($UploadDir, $UploadVideoCDN);
+//        $UploadDir = ROOT_PATH . '/' . $originalVideoName;
+//        $CDN_FILE_NAME = substr($originalVideoName, -29);
+//        $UploadVideoCDN = CDN_PUSH_VIDEO . $c_id . '/' . $CDN_FILE_NAME;
+//        $s3->putObject($UploadDir, $UploadVideoCDN);
         //資料庫
         $sql = " INSERT INTO line_push_video ";
         $sql .= "( c_id, lpv_name, lpv_img, lpv_img_cdn_root, lpv_video, ";
