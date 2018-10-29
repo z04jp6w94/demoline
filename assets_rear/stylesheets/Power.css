@@ -1,0 +1,244 @@
+body {
+    color: #000000;
+    /*background-color: #F1F1F1;*/
+    background-color: #FFF;
+    margin: 0;
+    font-family: Verdana, Arial, "微軟正黑體", "新細明體";
+    -webkit-text-size-adjust: none;
+}
+
+/*刪除連結虛線框*/
+a {blr:expression(this.onFocus=this.blur());} 
+a:focus {-moz-outline-style: none;} 
+
+/*警告,下載中視窗開關*/
+.on  {display:block}
+.off {display:none}
+
+.power-DateFontColor {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 9px;
+    color: #DADADA;
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 8px;
+    line-height: 10px;
+}
+.power-Loginfont01 {
+    font-family: Verdana, Arial, "細明體";
+    font-size: 10px;
+    padding-left: 12px;
+    letter-spacing: 4px;
+}
+.power-Logintext01 {
+    font-family: Verdana, Arial, "細明體";
+    font-size: 9px;
+    background-color: #FFFFFF;
+    border: 1px solid #E1E1E1;
+    height: 14px;
+    line-height: 14px;
+    width: 130px;
+    -webkit-text-size-adjust:none;
+}
+.power-Logintext02 {
+    font-family: Verdana, Arial, "細明體";
+    font-size: 9px;
+    background-color: #FFFFFF;
+    border: 1px solid #E1E1E1;
+    height: 14px;
+    width: 100px;
+}
+.power-Loginbutton01 {
+    background-color: #FFFFFF;
+    border: 1px solid #E1E1E1;
+    height: 45px;
+    width: 61px;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    padding: 2px 0 0 0;
+    color: #344567;
+}
+.power-MenuFont01 {
+    font-family: Verdana, Arial, "細明體";
+    font-size: 9pt;
+    color: #CC3333;
+    padding-left: 5px;
+    line-height: 20px;
+}
+.power-MenuFont02 {
+    font-family: Verdana, Arial, "細明體";
+    font-size: 9pt;
+    color: #666666;
+    padding-left: 5px;
+    line-height: 20px;
+}
+.power-Font01 {
+    font-family: Verdana, Arial, "細明體";
+    font-size: 9pt;
+    color: #75A732;
+    letter-spacing: 2px;
+}
+.power-Font02 {
+    font-family: Verdana, Arial, "細明體";
+    font-size: 9pt;
+    color: #888888;
+}
+.power-Font03 {
+    font-family: Verdana, Arial, "細明體";
+    font-size: 9pt;
+    color: #000000;
+}
+.power-text01 {
+    font-family: Verdana, Arial, "細明體";
+    font-size: 9pt;
+    background-color: #FFFFFF;
+    border: 1px solid #BEBEBE;
+    height: 18px;
+    width: 100%;
+}
+.power-text01Red {
+    font-family: Verdana, Arial, "細明體";
+    font-size: 9pt;
+    background-color: #FFFFFF;
+    border: 1px solid #CC3333;
+    height: 18px;
+    width: 100%;
+}
+.power-text02 {
+    font-family: Verdana, Arial, "細明體";
+    font-size: 9pt;
+    background-color: #FFFFFF;
+    border: 1px solid #BEBEBE;
+    width: 100%;
+}
+.power-text02Red {
+    font-family: Verdana, Arial, "細明體";
+    font-size: 9pt;
+    background-color: #FFFFFF;
+    border: 1px solid #CC3333;
+    width: 100%;
+}
+.power-text03 {
+    font-family: Verdana, Arial, "細明體";
+    font-size: 9pt;
+    background-color: #FFFFFF;
+    border: 1px solid #BEBEBE;
+    height: 18px;
+}
+.power-text03Red {
+    font-family: Verdana, Arial, "細明體";
+    font-size: 9pt;
+    background-color: #FFCCCC;
+    border: 1px solid #CC3333;
+    height: 18px;
+}
+.power-button01 {
+    background-color: #FFFFFF;
+    border: 1px solid #BEBEBE;
+    height: 40px;
+    width: 61px;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 9pt;
+    padding: 1px 0 0 0;
+    color: #344567;
+}
+.power-button02 {
+    font-family: "Verdana", "Arial", "Helvetica", "sans-serif";
+    background-color: #FFFFFF;
+    border: 1px solid #BEBEBE;
+    font-size: 10px;
+    color: #344567;
+    cursor: hand;
+}
+.power-Select01 {
+    font-family: Verdana, Arial, "細明體";
+    font-size: 9pt;
+    color: #888888;
+    background-color: #F0FCEF;
+}
+.power-Select02 {
+    font-family: Verdana, Arial, "細明體";
+    font-size: 11px;
+    color: #888888;
+    background-color: #F0FCEF;
+    height: 24px;
+    width: 150px;
+}
+.power-table01 {
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-bottom-style: none;
+    border-left-style: solid;
+    border-top-color: #E2E2E2;
+    border-right-color: #E2E2E2;
+    border-bottom-color: #E2E2E2;
+    border-left-color: #E2E2E2;
+}
+.power-table02 {
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-top-style: none;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-top-color: #E2E2E2;
+    border-right-color: #E2E2E2;
+    border-bottom-color: #E2E2E2;
+    border-left-color: #E2E2E2;
+}
+.VAMM-td01 {
+    border-left-width: 1px;
+    border-left-style: solid;
+    border-left-color: #E2E2E2;
+    padding-right: 3px;
+    padding-left: 3px;
+}
+.VAMM-td02 {
+    border-left-width: 1px;
+    border-left-style: solid;
+    border-left-color: #E2E2E2;
+}
+#sortimgup {
+    width: 9px;
+    height: 9px;
+    background: url(../Images/SortImg.gif) 0 0 no-repeat;
+    display: block;
+    float: left;
+    margin: 3px 10px 0 0;
+}
+#sortimgdown {
+    width: 9px;
+    height: 9px;
+    background: url(../Images/SortImg.gif) -9px 0 no-repeat;
+    display: block;
+    float: left;
+    margin: 3px 10px 0 0;
+}
+.fontstyle01 {color: #818181}
+.TextGrayLine{
+    height: 20px;
+    border: 1px solid #CCC;
+    width: 150px;
+}
+.TextRedLine{
+    height: 20px;
+    border: 1px solid #C33;	
+}
+.Err{
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 10px;
+    font-weight: bold;
+    color: #C33;
+}
+.ErrMsg{
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 11px;
+    color: #C33;
+}

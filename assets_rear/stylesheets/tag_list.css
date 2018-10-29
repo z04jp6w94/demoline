@@ -1,0 +1,244 @@
+.table1 {
+    width: 100%;
+    margin: 2px 10px 2px 10px;
+    padding: 10px; 
+    background-color: #CCEFFB;
+}
+.table1img {
+    display: inline-block;
+    height: 40px;
+    border-radius: 99em;
+    background-color: white;
+}
+.table1div1 {
+    position: relative;
+    height: 40px;
+    margin-left: 10px;
+} 
+.table1div2 {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+.table1div3 {
+    position: absolute;
+    top: 10px;
+    left: 60px;
+}
+.table1div4 {
+    position: absolute;
+    top: 0px;
+    right: 60px;
+    border: 1px solid #CCCCCC;
+    padding: 6px 7px;
+    background: transparent;
+    font-size: 16px;
+    cursor: pointer;
+}
+.table1div5 {
+    position: absolute;
+    top: 40px;
+    right: 30px;
+    width: 160px;
+    height: 200px;
+    border-radius: 3px;
+    padding: 6px 7px;
+    display: none;
+    overflow: auto;
+    background-color: #F7F7F7;
+    z-index: 10px;
+}
+.table1div5 ul {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+.table1div5 ul li {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0px;
+    padding: 5px;
+}
+.table1div6 {
+    position: absolute;
+    top: 240px;
+    right: 30px;
+    width: 160px;
+    border-radius: 3px;
+    padding: 6px 7px;
+    display: none;
+    text-align: center;
+    overflow: auto;
+    background-color: #F7F7F7;
+    z-index: 10px;             
+}
+.table1div6 button {
+    margin: 0px 3px;
+    border: 1px solid #D7D7D7;
+    border-radius: 3px;
+    padding: 7px 15px;
+    font-family: Sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    color: #FFFFFF;
+    background-color: #007FAD;
+}
+.table2 {
+    width: 100%;
+    margin: 2px 10px 0px 10px;
+    padding: 10px; 
+    background-color: #E2F5FC;
+}
+.table3 {
+    width: 100%;
+    margin: 0px 10px 2px 10px;
+    padding: 10px; 
+    background-color: #E2F5FC;
+}
+.table4 {
+    height: 100%;
+}
+.table4 tr{
+    height: 30px;
+}
+.table4 tr td {
+    box-sizing: border-box;
+    padding: 10px 20px;
+    font-family: Serif;
+    font-size: 14px;
+    font-weight: normal;
+    color: #000000;
+}
+.table4 tr th {
+    box-sizing: border-box;
+    width: 300px;
+    padding: 10px 20px;
+    font-family: Sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: #535C69;
+}
+.table5 {
+    width: 100%;
+}
+.table5 tr{
+    height: 30px;
+}
+.table5 tr td {
+    box-sizing: border-box;
+    width: 100px;
+    padding: 20px 20px;
+    font-family: Serif;
+    font-size: 14px;
+    font-weight: normal;
+    color: #000000;
+}
+.table5 tr th {
+    box-sizing: border-box;
+    padding: 20px 0px;
+    text-align: left;
+
+}
+.table5 tr th span {
+    box-sizing: border-box;
+    margin: 0px 10px;
+    border-radius: 3px;
+    padding: 8px;
+    /* font-family: Sans-serif;
+     
+    */
+    font-family: Times New Roman;
+    font-size: 15px;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+.table6 {
+    width: 100%;
+}
+.table6 tr{
+    height: 30px;
+}
+.table6 tr td {
+    box-sizing: border-box;
+    padding: 20px 20px;
+    font-family: Serif;
+    font-size: 14px;
+    font-weight: normal;
+    color: #000000;
+}
+.table6 tr th {
+    box-sizing: border-box;
+    width: 300px;
+    padding: 20px 20px 20px 300px;
+    font-family: Sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: #535C69;
+}
+.ulcss {
+    box-sizing: border-box;
+    width: 100%;
+    /*border-bottom: 1px solid #D7D7D7;*/
+}
+.licss {
+    box-sizing: border-box;
+    display: inline-block;
+    margin: 0px 3px;
+    border: 1px solid #D7D7D7;
+    border-radius: 3px;
+    padding: 7px 15px;
+    font-family: Sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    color: #535C69;
+    text-align: center;
+    background-color: #F1F1F1;
+}
+.licssselect {
+    font-size: 16px;
+    background-color: white;
+}
+.divexternalcss {
+    padding: 10px 50px;
+}
+.divinternalcss {
+    display: none;
+}
+.divinternalcssselect {
+    display: block;
+}
+/*input[type="text"] {
+    border: 0 none;
+    border-radius: 5px; 
+    padding: 5px 10px;
+    font-family: Sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #D3E8F0; 
+    cursor: pointer;
+}*/
+select {
+    width: 268px;
+    height: 34px;
+    border: 1px solid #ccc;
+    padding: 5px;   
+    background: transparent;
+    font-size: 16px;
+}
+.table7 {
+    width: 100%;
+}
+.table7 tr{
+    height: 10px;
+}
+.table7 tr td {
+    box-sizing: border-box;
+    width: 100px;
+    padding: 20px 20px;
+    font-family: Serif;
+    font-size: 14px;
+    font-weight: normal;
+    color: #000000;
+}
