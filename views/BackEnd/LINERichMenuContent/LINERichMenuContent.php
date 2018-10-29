@@ -36,7 +36,7 @@ $delete = "disabled";
 chkUserFunc($mysqli, $user_id, $programPath);
 //取得畫面內容
 $sql = " SELECT lrcm_id, lrcm_keyword, case lrcm_type ";
-$sql .= " when '1' then '文字' when '2' then '麻將牌' when '3' then '圖片' else '其他' end as 'type', ";
+$sql .= " when '1' then '文字' when '2' then '輪播' when '3' then '圖片' else '其他' end as 'type', ";
 $sql .= " entry_datetime";
 $sql .= $sqlFrom;
 $sql .= $sqlWhere;
@@ -192,12 +192,6 @@ $initAry = $mysqli->readArraySTMT($sql, 4);
                                         </tfoot>
 
                                         <tbody>
-                                            <tr>
-                                                <td></td>
-                                                <td>[提問]</td>
-                                                <td>系統建置</td>
-                                                <td></td>
-                                            </tr>
                                             <?php foreach ($initAry as $rsAry) { ?> 
                                                 <tr>
                                                     <td>

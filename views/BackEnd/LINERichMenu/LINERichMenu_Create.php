@@ -70,7 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             } else if ($rst_type == '4') {
                 $action_type = 'postback';
                 $action_type_option = 'data';
-                $action = 'action=3';
+                $action = 'action=14';
             } else if ($rst_type == '5') {
                 $action_type = 'postback';
                 $action_type_option = 'data';
@@ -111,7 +111,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             } else if ($rst_type == '4') {
                 $action_type = 'postback';
                 $action_type_option = 'data';
-                $action = 'action=3';
+                $action = 'action=14';
             } else if ($rst_type == '5') {
                 $action_type = 'postback';
                 $action_type_option = 'data';
@@ -148,7 +148,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             } else if ($rst_type == '4') {
                 $action_type = 'postback';
                 $action_type_option = 'data';
-                $action = 'action=3';
+                $action = 'action=14';
             } else if ($rst_type == '5') {
                 $action_type = 'postback';
                 $action_type_option = 'data';
@@ -185,7 +185,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             } else if ($rst_type == '4') {
                 $action_type = 'postback';
                 $action_type_option = 'data';
-                $action = 'action=3';
+                $action = 'action=14';
             } else if ($rst_type == '5') {
                 $action_type = 'postback';
                 $action_type_option = 'data';
@@ -220,7 +220,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             } else if ($rst_type == '4') {
                 $action_type = 'postback';
                 $action_type_option = 'data';
-                $action = 'action=3';
+                $action = 'action=14';
             } else if ($rst_type == '5') {
                 $action_type = 'postback';
                 $action_type_option = 'data';
@@ -253,7 +253,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             } else if ($rst_type == '4') {
                 $action_type = 'postback';
                 $action_type_option = 'data';
-                $action = 'action=3';
+                $action = 'action=14';
             } else if ($rst_type == '5') {
                 $action_type = 'postback';
                 $action_type_option = 'data';
@@ -283,7 +283,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         } else if ($rst_type == '4') {
             $action_type = 'postback';
             $action_type_option = 'data';
-            $action = 'action=3';
+            $action = 'action=14';
         } else if ($rst_type == '5') {
             $action_type = 'postback';
             $action_type_option = 'data';

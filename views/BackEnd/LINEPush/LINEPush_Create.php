@@ -83,13 +83,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $originalImgName = $pictureFile->archiveReSizePictureFileTo1040();
             $thumbnailImgName = $pictureFile->archiveWithReSizePictureFile();
             /* 上傳檔案到CDN */
-            $UploadDir = ROOT_PATH . '/' . $serverFilePath . '/';
+            /*$UploadDir = ROOT_PATH . '/' . $serverFilePath . '/';
             $UploadCDN = CDN_PUSH . $c_id . '/' . $DateTimeRoot . '/';
             $s3->putObject($UploadDir . '240', $UploadCDN . '240');
             $s3->putObject($UploadDir . '300', $UploadCDN . '300');
             $s3->putObject($UploadDir . '460', $UploadCDN . '460');
             $s3->putObject($UploadDir . '700', $UploadCDN . '700');
-            $s3->putObject($UploadDir . '1040', $UploadCDN . '1040');
+            $s3->putObject($UploadDir . '1040', $UploadCDN . '1040');*/
         } else if ($lp_type == '3') {
             $oldfileName = $_FILES['p_img']['name'];
             $newfileName = $c_id . "_" . date("YmdHis");
@@ -101,10 +101,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $originalImgName = $pictureFile->archiveWithoutReSizePictureFile();
             $thumbnailImgName = $pictureFile->archiveWithReSizePictureFile();
             /* 上傳檔案到CDN */
-            $UploadDir = ROOT_PATH . '/' . $thumbnailImgName;
+            /*$UploadDir = ROOT_PATH . '/' . $thumbnailImgName;
             $CDN_FILE_NAME = substr($thumbnailImgName, -38);
             $UploadCDN = CDN_PUSH . $c_id . '/' . $CDN_FILE_NAME;
-            $s3->putObject($UploadDir, $UploadCDN);
+            $s3->putObject($UploadDir, $UploadCDN);*/
         }
 
         $sql = "INSERT INTO push_m ";

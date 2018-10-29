@@ -40,10 +40,11 @@ $c_line_name = $mysqli->readValuePreSTMT($sql, "s", array($c_id));
 /* Data */
 $sql = "SELECT p_id, cp_id, ct_id, p_name, p_content, ";
 $sql .= " p_url, p_cdn_root, p_send_status, p_send_date, lp_type ";
+$sql .= " p_img ";
 $sql .= " FROM push_m ";
 $sql .= " WHERE p_id = ?";
 $sql .= " AND c_id = ? ";
-$initAry = $mysqli->readArrayPreSTMT($sql, "ss", array($dataKey, $c_id), 10);
+$initAry = $mysqli->readArrayPreSTMT($sql, "ss", array($dataKey, $c_id), 11);
 $push_type = $initAry[0][9];
 //分類代碼檔
 $sql = " select cp_id, cp_name from code_push ";
@@ -236,10 +237,15 @@ $sendTime = date('h:i A', strtotime($datetime));
                                                 <div id="uploadFilePreviewBlock">
                                                     <label id="uploadFileDelete" for="definput"></label>
                                                     <label id="uploadFilePreview" for="definput"><?php
+//                                                        if ($push_type == "2") {
+//                                                            $img_url = CDN_ROOT_PATH . $initAry[0][6] . "1040";
+//                                                        } else {
+//                                                            $img_url = CDN_ROOT_PATH . $initAry[0][6];
+//                                                        };
                                                         if ($push_type == "2") {
-                                                            $img_url = CDN_ROOT_PATH . $initAry[0][6] . "1040";
+                                                            $img_url = WEB_HOSTNAME . $initAry[0][10];
                                                         } else {
-                                                            $img_url = CDN_ROOT_PATH . $initAry[0][6];
+                                                            $img_url = WEB_HOSTNAME . $initAry[0][10];
                                                         };
                                                         if ($initAry[0][6] != "")
                                                             echo "<img src='" . $img_url . "' style='width:300px;'><img>";

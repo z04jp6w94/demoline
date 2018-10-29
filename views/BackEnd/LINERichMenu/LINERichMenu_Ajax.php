@@ -20,12 +20,12 @@ if ($menu_type == '') {
     exit;
 }
 /* Data */
-$sql = " SELECT '0', '[提問]' ";
-$sql .= " FROM line_richmenu_content_m ";
-$sql .= " UNION ";
-$sql .= " (SELECT lrcm_id, lrcm_keyword FROM line_richmenu_content_m ";
+//$sql = " SELECT '0', '[提問]' ";
+//$sql .= " FROM line_richmenu_content_m ";
+//$sql .= " UNION ";
+$sql = " SELECT lrcm_id, lrcm_keyword FROM line_richmenu_content_m ";
 $sql .= " WHERE c_id = ? ";
-$sql .= " AND deletestatus = 'N') ";
+$sql .= " AND deletestatus = 'N' ";
 $lrcm_Ary = $mysqli->readArrayPreSTMT($sql, "s", array($c_id), 2);
 
 $str = "";
